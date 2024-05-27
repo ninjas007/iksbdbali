@@ -27,21 +27,22 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                <?php include('data-diri.php'); ?>
+                                <?php include('data-diri-edit.php'); ?>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <?php include('data-pasangan.php'); ?>
+                                <!-- <?php include('data-pasangan-edit.php'); ?> -->
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="row mb-3">
                                     <div class="col-12">
-                                        <a href="javascript:void(0)" class="btn btn-primary btn-sm" onclick="tambahAnak()">
+                                        <a href="javascript:void(0)" class="btn btn-primary btn-sm" id="btnAddAnak">
                                            <i class="fa fa-plus"></i> Tambah Anak
                                         </a>
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="table-row">
-                                    <?php include('data-anak.php'); ?>
+                                    <?php include('data-anak-edit.php'); ?>
                                 </div>
                             </div>
                         </div>

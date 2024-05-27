@@ -19,11 +19,16 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
 // mengecek status kawin untuk mengalihkan ke halaman pasangan
 function toggleStatus(value) {
-    if (value == 'Kawin') {
-        document.getElementById('punyaPasangan').classList.toggle('hidden');
+    if (value === 'Kawin') {
+        $('#punyaPasangan').removeClass('hidden');
     } else {
-        document.getElementById('punyaPasangan').classList.toggle('hidden');
+        $('#punyaPasangan').addClass('hidden');
     }
+}
+
+function loadStatus() {
+    const status = ('#statusDiri').val();
+    toggleStatus(status);
 }
 
 // klik punyaPasangan
@@ -37,18 +42,18 @@ $('#punyaAnak').click(function() {
 
 
 $(document).ready(function () {
-    changeCardBackgroundColor('tabs-1'); // Tab 1 aktif secara default
+     // Tab 1 aktif secara default
+    changeCardBackgroundColor('tabs-1');
 
-    // Initial check of the status
+    // check status tab ketika status terganti
     toggleTabsBasedOnStatus();
     
-    // Listen to changes in the status dropdown
-    document.getElementById('statusDiri').addEventListener('change', toggleTabsBasedOnStatus);
+    $('#statusDiri').on('change', toggleTabsBasedOnStatus);
 });
 
 // menonaktifkan dan aktifkan tab ketika status terganti
 function toggleTabsBasedOnStatus() {
-    const status = document.getElementById('statusDiri').value;
+    const status = $('#statusDiri').val();
     const tabs = document.querySelectorAll('.nav-link[data-toggle="tab"]');
     tabs.forEach(tab => {
         if (status === 'Kawin') {
@@ -61,13 +66,9 @@ function toggleTabsBasedOnStatus() {
     });
 }
 
-// tambah anak
-$('#btnAddAnak').click(function() {
-   let row = kontenAnak();
-
-   // add row
-   $('.table-row').append(row);
-});
+function tambahAnak() {
+    $('.table-row').append(kontenAnak());
+}
 
 function removeRow(index) {
     $('#row-' + index).remove();
@@ -77,8 +78,10 @@ function kontenAnak() {
     let rowIndex = $('.table-row').children().length;
 
     return `
-    <hr>
     <div class="row" id="row-${rowIndex}">
+    <div class="col-12">
+        <hr>
+    </div>
     <div class="col-4">
         <div class="form-group">
             <label>Nama Anak ${rowIndex + 1}</label>
@@ -96,10 +99,10 @@ function kontenAnak() {
         <div class="form-group">
             <label>Jenis Kelamin Anak</label>
             <select class="form-control" name="jenisKelaminAnak[${rowIndex}]" required>
-                <option value="Laki-laki" <?= set_select('jenisKelaminAnak[${rowIndex}]', 'Laki-laki'); ?>>
+                <option value="Laki-laki">
                     Laki-laki
                 </option>
-                <option value="Perempuan" <?= set_select('jenisKelaminAnak[${rowIndex}]', 'Perempuan'); ?>>
+                <option value="Perempuan">
                     Perempuan
                 </option>
             </select>

@@ -12,8 +12,6 @@ class Member extends CI_Controller {
     public function index()
     {
         $data['title'] = 'Daftar member';
-        // $page = 0;
-        // $limit = 100;
 
         $sql = "SELECT m.*, p.nama AS nama_pendidikan,
                     (SELECT nama 
@@ -67,13 +65,37 @@ class Member extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function edit($id)
+    {
+        $data['title'] = 'Edit member';
+
+        // $sql = "SELECT 
+        //             m.*, 
+        //             p.nama AS nama_pendidikan,
+        //         JOIN members.id = m.pasangan_id) AS pasangan
+                // "
+
+        $data['member'] = $this->db->get_where('members', ['id' => $id])->row_array();
+        $data['pendidikan'] = $this->db->query("SELECT * FROM pendidikan")->result_array();
+
+        // load script bantuan untuk datatable library
+        $data['scripts'] = [
+            '<script src="' . base_url('assets/') . 'js/member.js?v=' . time() . '"></script>',
+        ];
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('member/edit', $data);
+        $this->load->view('templates/footer');
+    }
+
     public function delete($id)
     {
         // simpan data untuk menghapus pasangan dan anak
         $result = $this->db->get_where('members', ['id' => $id])->row_array();
 
         if ($result) {
-        
             // Start transaction
             $this->db->trans_start();
         
@@ -86,8 +108,8 @@ class Member extends CI_Controller {
             $this->db->delete('members');
         
             // Hapus anak-anak berdasarkan id yang dihapus
-            $this->db->where('bapak_id', $id);
-            $this->db->delete('members');
+            $this->db->where('orang_tua_id', $id);
+            $this->db->delete('members_anak');
         
             // Commit transaction
             $this->db->trans_complete();
