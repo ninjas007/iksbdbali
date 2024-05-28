@@ -3,3 +3,4 @@ error_log
 /application/settings/*
 /vendor
 /application/.env
+/assets/img/profile/
