@@ -1,7 +1,10 @@
+<!-- html pdf -->
+<script src="<?= base_url('assets/js/html2pdf.bundle.min.js') ?>"></script>
+
 <!-- table 2 excel -->
-<script src="https://cdn.jsdelivr.net/npm/jquery-table2excel@1.1.1/dist/jquery.table2excel.min.js"></script>
+<script src="<?= base_url('assets/js/jquery.table2excel.min.js') ?>"></script>
 <script>
-    exportXls = function() {
+    function exportXls() {
         $.ajax({
             url: "<?= base_url('anggota/exportXls'); ?>",
             type: 'post',
@@ -24,7 +27,6 @@
         let tbody = ``;
         data.forEach((value, index) => {
             tbody += `<tr>
-                            <td>${index+1}</td>
                             <td>${value['nama']}</td>
                             <td>${value['tempat_lahir']}, ${value['tanggal_lahir']}</td>
                             <td>${value['jenis_kelamin']}</td>
@@ -42,10 +44,12 @@
                             <td>${value['jml_anak']}</td>
                         </tr>`;
         })
-        let table = `<table id="tableExport" class="table table-bordered table-striped">
+        let table = `<table id="tableExport" class="small-font" style="margin-top: 40px">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th colspan="16" style="text-align: center; padding: 10px; font-size: 18px; font-weight: bold">Data Anggota</th>
+                            </tr>
+                            <tr>
                                 <th>Nama</th>
                                 <th>Tempat, Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
@@ -69,5 +73,39 @@
                     </table>`;
 
         $('#contentExcel').html(table);
+    }
+
+    function exportPdf() {
+        $.ajax({
+            url: "<?= base_url('anggota/exportPdf'); ?>",
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                contentTable(data);
+                var element = document.getElementById('tableExport');
+                var opt = {
+                    margin: 0.1,
+                    filename: 'Data_Anggota.pdf',
+                    image: {
+                        type: 'jpeg',
+                        quality: 100 // Set quality to highest
+                    },
+                    html2canvas: {
+                        scale: 2 // Increase scale for higher resolution
+                    },
+                    jsPDF: {
+                        unit: 'in',
+                        format: 'letter',
+                        orientation: 'landscape'
+                    }
+                };
+
+                // New Promise-based usage:
+                html2pdf().set(opt).from(element).save();
+            },
+            error: function () {
+                alert('Terjadi kesalahan');
+            }
+        })
     }
 </script>

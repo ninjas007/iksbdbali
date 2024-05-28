@@ -20,6 +20,7 @@
                     <h5 class="card-title"><?= $user['name']; ?></h5>
                     <p class="card-text"><?= $user['email']; ?></p>
                     <a href="<?= base_url('profile/edit'); ?>" class="btn btn-primary">Edit</a>
+                    <a href="<?= base_url('profile/changepassword'); ?>" class="btn btn-primary">Ganti Password</a>
                 </div>
             </div>
         </div>

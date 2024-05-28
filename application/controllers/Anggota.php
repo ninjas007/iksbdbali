@@ -270,4 +270,11 @@ class Anggota extends CI_Controller {
 
         echo json_encode($data);
     }
+
+    public function exportPdf()
+    {
+        $data = $this->queryGetData();
+
+        echo json_encode($data);
+    }
 }

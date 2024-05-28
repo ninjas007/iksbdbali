@@ -1,6 +1,8 @@
     $(document).ready(function () {
         $('#tableAnggota').DataTable({
-            "info": false,
+            "info": true,
+            "lengthChange": false,
+            "ordering": false,
             dom: 'Bfrtip',
             buttons: [
                 'excel',
