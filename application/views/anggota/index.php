@@ -16,16 +16,22 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="m-0">
-                        <a href="<?php echo base_url('/member/tambah') ?>" class="btn btn-sm btn-primary"><i
-                                class="fa fa-plus"></i> Tambah Member</a>
-                        <a href="<?php echo base_url('member/export') ?>" class="btn btn-sm btn-primary">
-                            Export Data
+                        <a href="<?php echo base_url('/anggota/tambah') ?>" class="btn btn-sm btn-primary"><i
+                                class="fa fa-plus"></i> Tambah anggota</a>
+                        <a href="<?php echo base_url('anggota/export') ?>?file=pdf" class="btn btn-sm btn-primary">
+                            Export Pdf
+                        </a>
+                        <a href="<?php echo base_url('anggota/export') ?>?file=xls" class="btn btn-sm btn-primary">
+                            Export Excel
+                        </a>
+                        <a href="javascript:void(0)" onclick="exportXls()" class="btn btn-sm btn-primary">
+                            Export Excel
                         </a>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive" cellpadding="0" cellspacing="0">
-                        <table class="table table-bordered font-weight-bold" id="dataTable" width="100%" cellspacing="0"
+                        <table class="table table-bordered font-weight-bold" id="tableAnggota" width="100%" cellspacing="0"
                             style="font-size: 10px !important;">
                             <thead class="thead-light">
                                <tr>
@@ -49,11 +55,15 @@
                                </tr>
                             </thead>
                             <tbody>
-                                <?php if ($member) : ?>
-                                    <?php foreach ($member as $i => $a) : ?>
+                                <?php if ($anggota) : ?>
+                                    <?php foreach ($anggota as $i => $a) : ?>
                                         <tr>
                                             <td><?= $i + 1 ?></td>
-                                            <td><?= $a['nama'] ?></td>
+                                            <td>
+                                                <a href="<?= base_url('anggota/detail/' . $a['id']) ?>">
+                                                    <?= $a['nama'] ?>
+                                                </a>
+                                            </td>
                                             <td><?= $a['tempat_lahir'] ?>, <?= $a['tanggal_lahir'] ?></td>
                                             <td><?= $a['jenis_kelamin'] ?></td>
                                             <td><?= $a['agama'] ?></td>
@@ -67,21 +77,21 @@
                                             <td><?= $a['hobi'] ?></td>
                                             <td><?= $a['status'] ?></td>
                                             <td>
-                                                <a href="<?= base_url('member/detail/' . $a['id']) ?>"><?= $a['nama_pasangan'] ?></a>
+                                                <a href="<?= base_url('anggota/detail/' . $a['id']) ?>"><?= $a['nama_pasangan'] ?></a>
                                             </td>
                                             <td>
                                                 <?= $a['jml_anak'] ?>
                                             </td>
                                             <td style="text-align: center;">
-                                                <a href="<?= base_url('member/detail/' . $a['id']) ?>" class="badge badge-info p-2" title="Detail">
+                                                <a href="<?= base_url('anggota/detail/' . $a['id']) ?>" class="badge badge-info p-2" title="Detail">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                                 <br>
-                                                <a href="<?= base_url('member/edit/' . $a['id']) ?>" class="badge badge-primary p-2" title="Edit">
+                                                <a href="<?= base_url('anggota/edit/' . $a['id']) ?>" class="badge badge-primary p-2" title="Edit">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                                 <br>
-                                                <a href="<?= base_url('member/delete/' . $a['id']) ?>" class="badge badge-danger p-2"
+                                                <a href="<?= base_url('anggota/delete/' . $a['id']) ?>" class="badge badge-danger p-2"
                                                     onclick="return confirm('Yakin ingin mendelete data ini?')" title="Delete">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
@@ -100,6 +110,7 @@
             </div>
         </div>
     </div>
+    <div id="contentExcel" style="display: none;"></div>
 
 </div>
 

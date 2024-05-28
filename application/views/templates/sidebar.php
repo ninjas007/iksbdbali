@@ -3,7 +3,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('admin') ?>">
-                <div class="sidebar-brand-text mx-3">Dashboard Member</div>
+                <div class="sidebar-brand-text mx-3">Dashboard Anggota</div>
             </a>
 
             <!-- Divider -->
@@ -12,7 +12,7 @@
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?php echo base_url('/') ?>">
                     <i class="fa fa-users"></i>
-                    <span>Member</span>
+                    <span>Anggota</span>
                 </a>
             </li>
 

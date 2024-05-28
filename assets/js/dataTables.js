@@ -1,11 +1,10 @@
     $(document).ready(function () {
-        $('#exportTable').DataTable({
-            "ordering": false,
-            "info":     false,
-            "searching": false,
+        $('#tableAnggota').DataTable({
+            "info": false,
             dom: 'Bfrtip',
             buttons: [
-                'excel'
+                'excel',
+                'pdf'
             ]
         });
     });

@@ -23,6 +23,7 @@ function toggleStatus(value) {
         $('#punyaPasangan').removeClass('hidden');
     } else {
         $('#punyaPasangan').addClass('hidden');
+        $('#namaPasangan').val('');
     }
 }
 
@@ -31,10 +32,6 @@ function loadStatus() {
     toggleStatus(status);
 }
 
-// klik punyaPasangan
-$('#punyaPasangan').click(function() {
-    $('[href="#tabs-2"]').tab('show');
-});
 
 $('#punyaAnak').click(function() {
     $('[href="#tabs-3"]').tab('show');
@@ -96,6 +93,8 @@ function kontenAnak() {
             <label>Tanggal Lahir Anak</label>
             <input type="date" class="form-control" name="tanggalLahirAnak[${rowIndex}]" required>
         </div>
+    </div>
+    <div class="col-4">
         <div class="form-group">
             <label>Jenis Kelamin Anak</label>
             <select class="form-control" name="jenisKelaminAnak[${rowIndex}]" required>
@@ -124,21 +123,6 @@ function kontenAnak() {
                     Konghucu
                 </option>
             </select>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="form-group">
-            <label>Alamat Domisili Anak</label>
-            <textarea class="form-control" name="alamatDomisiliAnak[${rowIndex}]" rows="2"
-                placeholder="Masukkan alamat domisili Anak"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Pendidikan Terakhir Anak</label>
-            <input type="text" class="form-control" name="pendidikanTerakhirAnak[${rowIndex}]" placeholder="Masukkan pendidikan terakhir Anak">
-        </div>
-        <div class="form-group">
-            <label>Jurusan Anak</label>
-            <input type="text" class="form-control" name="jurusanAnak[${rowIndex}]" placeholder="Masukkan jurusan Anak">
         </div>
     </div>
     <div class="col-4">

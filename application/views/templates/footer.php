@@ -3,7 +3,7 @@
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright&copy;<?= date('Y'); ?> by <strong><a href="https://yb6-dxc.net/yd3fpi/"
-                                    target="_blank">YC3FPI</a></strong></span></span>
+                                    target="_blank">IKSBDBALI</a></strong></span></span>
                     </div>
                 </div>
             </footer>
@@ -52,6 +52,8 @@
             <!-- Custom scripts for all pages-->
             <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
 
+
+
             <?php 
 
                 if (isset($scripts)) {
@@ -66,6 +68,8 @@
                 }
 
              ?>
+
+
             <script>
                 $('.custom-file-input').on('change', function () {
                     let fileName = $(this).val().split('\\').pop();
@@ -73,8 +77,8 @@
                 });
 
 
-                $('.alert', function() {
-                    setTimeout(function() {
+                $('.alert', function () {
+                    setTimeout(function () {
                         $(".alert").alert('close');
                     }, 3000);
                 })

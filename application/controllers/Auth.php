@@ -12,7 +12,7 @@ class Auth extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('email')) {
-            redirect('member');
+            redirect('anggota');
         }
 
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
@@ -47,7 +47,7 @@ class Auth extends CI_Controller
                     'image' => $user['image'],
                 ];
                 $this->session->set_userdata($data);
-                redirect('member');
+                redirect('anggota');
             }
             // gagal login salah password 
             else {

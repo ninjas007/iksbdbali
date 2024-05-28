@@ -12,36 +12,24 @@
                             <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Data Diri</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled-tab" data-toggle="tab" href="#tabs-2" role="tab">
-                                Data Pasangan  <br><small style="font-style: italic; color: red">Harus status kawin</small>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link disabled-tab" data-toggle="tab" href="#tabs-3" role="tab">
                                 Data Anak  <br><small style="font-style: italic; color: red">Harus status kawin</small>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <form method="post" action="<?= base_url('member/save'); ?>">
+                <form method="post" action="<?= base_url('anggota/save'); ?>">
+                    <input type="hidden" name="id" value="<?= $anggota['id'] ?? ''; ?>">
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                <?php include('data-diri.php'); ?>
-                            </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <?php include('data-pasangan.php'); ?>
+                                <?php include('data-diri-edit.php'); ?>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                <div class="row mb-3">
-                                    <div class="col-12">
-                                        <a href="javascript:void(0)" class="btn btn-primary btn-sm" onclick="tambahAnak()">
-                                           <i class="fa fa-plus"></i> Tambah Anak
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php include('btn-tambah-row-anak.php'); ?>
+
                                 <div class="table-row">
-                                    <?php include('data-anak.php'); ?>
+                                    <?php include('data-anak-edit.php'); ?>
                                 </div>
                             </div>
                         </div>
