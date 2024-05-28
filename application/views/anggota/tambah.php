@@ -35,6 +35,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-right">
+                        <a href="<?= base_url('anggota'); ?>" class="btn btn-danger">Batal</a>
                         <button type="submit" class="btn btn-primary">
                            <i class="fas fa-save"></i> Simpan
                         </button>

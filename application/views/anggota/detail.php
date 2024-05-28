@@ -92,14 +92,17 @@
                                     <td>:</td>
                                     <td><?= $anggota['status']; ?></td>
                                 </tr>
+                                <?php if ($anggota['status'] == 'Kawin') : ?>
                                 <tr>
                                     <td>Nama Pasangan</td>
                                     <td>:</td>
                                     <td><?= $anggota['nama_pasangan']; ?></td>
                                 </tr>
+                                <?php endif; ?>
                             </table>
                         </div>
                     </div>
+                    <?php if (count($anak) > 0) : ?>
                     <hr>
                     <div class="row">
                         <div class="col-12">
@@ -130,6 +133,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
