@@ -16,12 +16,12 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link pb-0" href="<?php echo base_url('/pendidikan') ?>">
                     <i class="fa fa-book"></i>
                     <span>Pendidikan</span>
                 </a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
