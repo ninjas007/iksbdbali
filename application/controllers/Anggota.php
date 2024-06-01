@@ -204,7 +204,7 @@ class Anggota extends CI_Controller {
     public function saveAnak($request, $orangTuaId)
     {
         // kalau nama kosong atau orang tua id tidak ada
-        if ($orangTuaId == null) {
+        if ($orangTuaId == null || count($request['namaAnak']) == 0 || !isset($request['namaAnak'])) {
             return 0;
         }
 
