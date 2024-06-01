@@ -137,13 +137,16 @@ class Anggota extends CI_Controller {
         $dataDiriId = $this->saveDataDiri($request);
 
         // save data anak
-        $dataAnak = $this->saveAnak($request, $dataDiriId);
+
+        if (isset($request['namaAnak']) || count($request['namaAnak']) > 0) {
+            $this->saveAnak($request, $dataDiriId);
+        }
 
         // Commit transaction
         $this->db->trans_complete();
 
         // Periksa apakah transaksi berhasil dilakukan
-        if ($this->db->trans_status() === FALSE || $dataAnak == 0) {
+        if ($this->db->trans_status() === FALSE) {
             // Jika transaksi gagal, tampilkan pesan error
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Terjadi Kesalahan, Silakan Coba Lagi<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -204,7 +207,7 @@ class Anggota extends CI_Controller {
     public function saveAnak($request, $orangTuaId)
     {
         // kalau nama kosong atau orang tua id tidak ada
-        if ($orangTuaId == null || count($request['namaAnak']) == 0 || !isset($request['namaAnak'])) {
+        if ($orangTuaId == null) {
             return 0;
         }
 
