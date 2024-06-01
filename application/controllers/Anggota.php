@@ -138,7 +138,7 @@ class Anggota extends CI_Controller {
 
         // save data anak
 
-        if (isset($request['namaAnak']) || count($request['namaAnak']) > 0) {
+        if (isset($request['namaAnak'])) {
             $this->saveAnak($request, $dataDiriId);
         }
 
