@@ -75,11 +75,11 @@ $query_builder = true;
 
 $db['default'] = array(
     'dsn'    => '',
-    'hostname' => getenv('DB_HOSTNAME') ?? 'localhost',
-    'username' => getenv('DB_USERNAME'),
-    'password' => getenv('DB_PASSWORD'),
-    'database' => getenv('DB_DATABASE'),
-    'dbdriver' => getenv('DB_DRIVER') ?? 'mysqli',
+    'hostname' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'database' => 'iksbdbali',
+    'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => false,
     'db_debug' => (ENVIRONMENT !== 'production'),
