@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Berita Iksbd Bali</title>
+  <title>IKSBD Bali</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -49,8 +49,9 @@
       </nav>
 
       <div class="colorlib-footer">
+        <img src="<?= base_url('assets') ?>/img/logo.jpg" alt="" style="width: 100px; padding-bottom: 20px;">
         <h4 style="font-size: 25px;" class="mb-4">IKSBD Bali</h4>
-        <p class="pfooter">&copy;<script>
+        <p class="pfooter">Copyright &copy;<script>
             document.write(new Date().getFullYear());
           </script>
         </p>
