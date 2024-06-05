@@ -16,6 +16,13 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username" name="username" value="<?= $user['username']; ?>">
+                    <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Full name</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="name" name="name" value="<?= $user['name']; ?>">

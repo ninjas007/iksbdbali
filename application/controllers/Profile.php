@@ -27,6 +27,7 @@ class Profile extends CI_Controller {
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|trim', [
             'required' => 'masukkan password untuk mengedit data',
         ]);
@@ -40,6 +41,7 @@ class Profile extends CI_Controller {
         } else {
             $name = $this->input->post('name');
             $email = $this->input->post('email');
+            $username = $this->input->post('username');
 
             if (!password_verify($this->input->post('password'), $data['user']['password'])) { 
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gagal update data profile</div>');
@@ -81,6 +83,7 @@ class Profile extends CI_Controller {
 
             $this->db->set('name', $name);
             $this->db->set('email', $email);
+            $this->db->set('username', $username);
             $this->db->where('id', $data['user']['id']);
             $this->db->update('user');
 
