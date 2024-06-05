@@ -94,7 +94,11 @@ class Blog extends CI_Controller {
 
     public function detail($slug)
     {
-        $data['berita'] = $this->db->get_where('berita', ['slug' => $slug])->row();
+        $this->db->where('slug', $slug);
+        $this->db->where('status', 1);
+        $berita = $this->db->get('berita')->row();
+        
+        $data['berita'] = $berita ?? (object)[];
 
         if (empty($data['berita'])) {
             $this->load->view('frontend/404');
@@ -111,7 +115,7 @@ class Blog extends CI_Controller {
 
     private function queryRecents()
     {
-        return $this->db->query("SELECT * FROM berita ORDER BY id DESC LIMIT 4")->result();
+        return $this->db->query("SELECT * FROM berita WHERE status = 1 ORDER BY id DESC LIMIT 4")->result();
     }
 
     private function queryArsipGroupByDateAndYear()
@@ -121,8 +125,9 @@ class Blog extends CI_Controller {
             DATE_FORMAT(created_at, '%M') as month, 
             COUNT(*) as total 
         FROM berita 
-            GROUP BY year, 
-            month 
+        WHERE status = 1
+        GROUP BY year, 
+        month
         ORDER BY 
             year DESC, 
             month DESC";
