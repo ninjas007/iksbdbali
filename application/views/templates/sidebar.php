@@ -2,7 +2,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('admin') ?>">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('/') ?>" target="_blank">
                 <div class="sidebar-brand-text mx-3">Dashboard Anggota</div>
             </a>
 
@@ -10,7 +10,7 @@
             <hr class="sidebar-divider">
 
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?php echo base_url('/') ?>">
+                <a class="nav-link pb-0" href="<?php echo base_url('/anggota') ?>">
                     <i class="fa fa-users"></i>
                     <span>Anggota</span>
                 </a>

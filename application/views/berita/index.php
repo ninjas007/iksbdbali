@@ -22,12 +22,13 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive" cellpadding="0" cellspacing="0">
-                        <table class="table table-bordered font-weight-bold" id="dataTable" width="100%" cellspacing="0"
-                            style="font-size: 10px !important;">
+                        <table class="table table-bordered font-weight-bold datatable-init" width="100%"
+                            cellspacing="0" style="font-size: 10px !important;">
                             <thead class="thead-light">
                                <tr>
                                     <th width="5%">No</th>
                                     <th>Judul</th>
+                                    <th>Status</th>
                                     <th style="text-align: center;" width="20%">#</th>
                                </tr>
                             </thead>
@@ -36,7 +37,12 @@
                                     <?php foreach ($berita as $i => $p) : ?>
                                         <tr>
                                             <td><?= $i + 1 ?></td>
-                                            <td><?= $p['judul'] ?></td>
+                                            <td>
+                                                <a href="<?= base_url('blog/' . $p['slug']) ?>" target="_blank">
+                                                    <?= $p['judul'] ?>
+                                                </a>
+                                            </td>
+                                            <td><?= $p['status'] == 1 ? 'Publish' : 'Draft' ?></td>
                                             <td style="text-align: center;">
                                                 <a href="<?= base_url('berita/edit/' . $p['id']) ?>"
                                                     class="badge badge-primary p-2">Ubah</a> 

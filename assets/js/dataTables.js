@@ -1,12 +1,8 @@
     $(document).ready(function () {
-        $('#tableAnggota').DataTable({
+        $('.datatable-init').DataTable({
             "info": true,
             "lengthChange": false,
             "ordering": false,
             dom: 'Bfrtip',
-            buttons: [
-                'excel',
-                'pdf'
-            ]
         });
     });

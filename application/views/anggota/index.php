@@ -28,7 +28,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive" cellpadding="0" cellspacing="0">
-                        <table class="table table-bordered font-weight-bold" id="tableAnggota" width="100%"
+                        <table class="table table-bordered font-weight-bold datatable-init" id="tableAnggota" width="100%"
                             cellspacing="0" style="font-size: 10px !important;">
                             <thead class="thead-light">
                                 <tr>

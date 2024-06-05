@@ -32,7 +32,7 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="gambar">Gambar</label>
+                                    <label for="gambar">Gambar Thumbnail</label>
                                     <div id="preview" class="mb-3">
                                         <img src="<?= base_url('assets/img/berita/') . $berita['gambar']; ?>" alt="<?= $berita['gambar']; ?>" style="width: 100%; height: 300px; object-fit: contain">
                                     </div>
@@ -46,7 +46,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <?php $this->load->view('berita/btn-submit') ?>
                                 </div>
                             </div>
                         </div>

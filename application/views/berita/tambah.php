@@ -21,7 +21,8 @@
 
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi Berita</label>
-                                    <textarea class="form-control tiny" id="deskripsi" name="deskripsi" rows="12"></textarea>
+                                    <textarea class="form-control tiny" id="deskripsi" name="deskripsi"
+                                        rows="12"></textarea>
                                     <?= form_error('deskripsi', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
 
@@ -29,7 +30,7 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="gambar">Gambar</label>
+                                    <label for="gambar">Gambar Thumbnail</label>
                                     <input type="file" class="form-control" id="gambar" name="gambar">
                                 </div>
                                 <div class="form-group">
@@ -40,7 +41,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <?php $this->load->view('berita/btn-submit') ?>
                                 </div>
                             </div>
                         </div>

@@ -463,7 +463,8 @@ pre {
       max-width: 960px; } }
   @media (min-width: 1200px) {
     .container {
-      max-width: 1140px; } }
+      max-width: 100%; } 
+    }
 
 .container-fluid {
   width: 100%;
@@ -8186,7 +8187,7 @@ h1, h2, h3, h4, h5,
   padding-bottom: 40px;
   padding-left: 2em;
   padding-right: 2em;
-  width: 25%;
+  width: 15%;
   position: fixed;
   bottom: 0;
   top: 0;
@@ -8203,7 +8204,7 @@ h1, h2, h3, h4, h5,
   border-right: 1px solid #e6e6e6; }
   @media (min-width: 992px) {
     #colorlib-aside {
-      width: 25%; } }
+      width: 15%; } }
   @media (max-width: 991.98px) {
     #colorlib-aside {
       width: 320px;
@@ -8370,7 +8371,7 @@ h1, h2, h3, h4, h5,
   transition: all 0.5s ease; }
   @media (min-width: 992px) {
     #colorlib-main {
-      width: 75%; } }
+      width: 85%; } }
 
 .colorlib-nav-toggle {
   cursor: pointer;

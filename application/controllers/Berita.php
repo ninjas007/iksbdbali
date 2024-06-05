@@ -18,6 +18,18 @@ class Berita extends CI_Controller {
         // query select data Berita
         $data['berita'] = $this->db->query("SELECT * FROM berita ORDER BY id DESC LIMIT $page, $limit")->result_array();
 
+        // load datatable untuk daftar anggota untuk datatable library
+        $data['links'] = [
+            '<link href="' . base_url('assets/') . 'vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">'
+        ];
+
+        // load script bantuan untuk datatable library
+		$data['scripts'] = [
+			'<script src="' . base_url('assets/') . 'vendor/datatables/jquery.dataTables.min.js"></script>',
+			'<script src="' . base_url('assets/') . 'vendor/datatables/dataTables.bootstrap4.min.js"></script>',
+			'<script src="' . base_url('assets/') . 'js/dataTables.js?v=' . time() . '"></script>'
+		];
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
