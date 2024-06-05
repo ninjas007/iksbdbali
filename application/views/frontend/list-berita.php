@@ -2,7 +2,7 @@
     <?php foreach ($list_berita as $key => $row) { ?>
         <div class="col-md-12">
             <div class="blog-entry ftco-animate d-md-flex">
-                <a href="single.html" class="img img-2"
+                <a href="<?= base_url('blog/'.$row->slug.'') ?>" class="img img-2"
                     style="background-image: url(<?= base_url('assets/img') ?>/berita/<?= $row->gambar ?>);"></a>
                 <div class="text text-2 pl-md-4">
                     <h3 class="mb-2">

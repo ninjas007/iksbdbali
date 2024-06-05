@@ -3,8 +3,8 @@
     tinymce.init({
         selector: 'textarea.tiny',
         forced_root_block: 'div',
-        plugins: 'image',
-        toolbar: 'image',
-        images_file_types: 'jpg,jpeg,png,svg,gif,webp'
+        // plugins: 'image',
+        // toolbar: 'image',
+        // images_file_types: 'jpg,jpeg,png,svg,gif,webp'
     });
 </script>

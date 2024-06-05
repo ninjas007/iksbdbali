@@ -49,7 +49,7 @@
       </nav>
 
       <div class="colorlib-footer">
-        <h4 style="font-size: 25px;" class="mb-4">Web Anggota</h4>
+        <h4 style="font-size: 25px;" class="mb-4">IKSBD Bali</h4>
         <p class="pfooter">&copy;<script>
             document.write(new Date().getFullYear());
           </script>
