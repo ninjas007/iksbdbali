@@ -34,26 +34,32 @@
   <div id="colorlib-page">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     <aside id="colorlib-aside" role="complementary" class="js-fullheight">
-      <nav id="colorlib-main-menu" role="navigation">
-        <ul>
-          <li class="colorlib-active"><a href="<?= base_url() ?>">Home</a></li>
-
-          <?php if ($this->session->userdata('email')) : ?>
-            <li><a href="<?= base_url('berita') ?>">Dashboard</a></li>
-            <li><a href="<?= base_url('auth/logout'); ?>">Logout</a></li>
-          <?php else : ?>
-            <li><a href="<?= base_url('auth') ?>">Login</a></li>
-          <?php endif; ?>
-
-        </ul>
-      </nav>
-
-      <div class="colorlib-footer">
+      <div>
         <img src="<?= base_url('assets') ?>/img/logo.jpg" alt="" style="width: 100px; padding-bottom: 20px;">
         <h4 style="font-size: 25px;" class="mb-4">IKSBD Bali</h4>
+      </div>
+
+      <div class="colorlib-footer">
+        <nav id="colorlib-main-menu" role="navigation" style="padding-bottom: 70px">
+          <ul>
+            <li class="colorlib-active"><a href="<?= base_url() ?>">Home</a></li>
+
+            <?php if ($this->session->userdata('email')) : ?>
+            <li><a href="<?= base_url('berita') ?>">Dashboard</a></li>
+            <li><a href="<?= base_url('auth/logout'); ?>">Logout</a></li>
+            <?php else : ?>
+            <li><a href="<?= base_url('auth') ?>">Login</a></li>
+            <?php endif; ?>
+
+          </ul>
+        </nav>
         <p class="pfooter">Copyright &copy;<script>
             document.write(new Date().getFullYear());
           </script>
         </p>
       </div>
     </aside>
+
+    <!-- 
+        
+        </p> -->
