@@ -42,7 +42,7 @@
       <div class="colorlib-footer">
         <nav id="colorlib-main-menu" role="navigation" style="padding-bottom: 70px">
           <ul>
-            <li class="colorlib-active"><a href="<?= base_url() ?>">Home</a></li>
+            <li class="<?= $this->uri->segment(1) == '' ? 'colorlib-active' : '' ?>"><a href="<?= base_url() ?>">Home</a></li>
 
             <?php if ($this->session->userdata('email')) : ?>
             <li><a href="<?= base_url('berita') ?>">Dashboard</a></li>
