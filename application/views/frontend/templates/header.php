@@ -32,11 +32,13 @@
 
 <body>
   <div id="colorlib-page">
-    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <a href="<?= base_url() ?>" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     <aside id="colorlib-aside" role="complementary" class="js-fullheight">
       <div>
+        <a href="<?= base_url() ?>">
         <img src="<?= base_url('assets') ?>/img/logo.jpg" alt="" style="width: 100px; padding-bottom: 20px;">
         <h4 style="font-size: 25px;" class="mb-4">IKSBD Bali</h4>
+        </a>
       </div>
 
       <div class="colorlib-footer">
