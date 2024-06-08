@@ -4,7 +4,7 @@
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
             stroke="#F96D00" />
     </svg></div>
-<div style="position: absolute; bottom: 3%; right: 1%; z-index: 99999">
+<div style="position: fixed; bottom: 3%; right: 1%; z-index: 99999">
     <a href="https://wa.me/6282237457933" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
             <path fill="#fff"
